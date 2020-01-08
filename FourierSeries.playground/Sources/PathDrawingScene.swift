@@ -23,6 +23,8 @@ public class PathDrawingScene: SKScene {
         path = CGMutablePath()
     }
     
+    var points: [CGPoint]!
+    
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
 
@@ -30,6 +32,8 @@ public class PathDrawingScene: SKScene {
         
         path = CGMutablePath()
         path.move(to: location)
+        
+        points = [location]
         
     }
 
@@ -39,12 +43,16 @@ public class PathDrawingScene: SKScene {
         let location = touches.first!.location(in: self)
         path.addLine(to: location)
 
+        points.append(location)
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
         path.closeSubpath()
+        
+        points.forEach { print("CGPoint(x: \($0.x), y: \($0.y)),") }
+        
     }
     
     private var lineShape: SKShapeNode!
