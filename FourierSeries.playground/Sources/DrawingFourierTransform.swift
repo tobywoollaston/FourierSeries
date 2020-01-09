@@ -93,7 +93,7 @@ public class DrawingFourierTransform: SKScene {
             let phase = fourier[i].phase!
 
             let circle = SKShapeNode(ellipseOf: CGSize(width: radius*2, height: radius*2))
-            circle.strokeColor = SKColor(white: 0.5, alpha: 0.2)
+            circle.strokeColor = SKColor(white: 1, alpha: 0.2)
             circle.position = point
             addChild(circle)
             circles.append(circle)

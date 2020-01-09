@@ -4,7 +4,7 @@ public class FourierSeriesMultiScene: SKScene {
     
     var time: CGFloat = 0;
     let center = CGPoint(x: 175, y: 350)
-    let number: Int = 100;
+    let number: Int = 5;
     var radii = [CGFloat]()
     var circles = [SKShapeNode]()
     var dots = [SKShapeNode]()
@@ -31,7 +31,7 @@ public class FourierSeriesMultiScene: SKScene {
             
             point.x += radius
             
-            let dot = SKShapeNode(ellipseOf: CGSize(width: 6, height: 6))
+            let dot = SKShapeNode(ellipseOf: CGSize(width: 2, height: 2))
             dot.fillColor = .white
             dot.position = point
             addChild(dot)
@@ -77,7 +77,7 @@ public class FourierSeriesMultiScene: SKScene {
         waveShape.lineWidth = 2
         waveShape.strokeColor = .white
             
-        time += 0.025
+        time += 0.01
         
     }
     
